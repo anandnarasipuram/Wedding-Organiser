@@ -63,3 +63,21 @@ def update_invite(guest_id, event_id, rsvp, party_size):
         .eq("event_id", event_id)
         .execute()
     )
+
+def list_rows(table, event_id=None):
+    query = get_client().table(table).select("*")
+    if event_id:
+        query = query.eq("event_id", event_id)
+    return query.order("created_at").execute().data
+
+
+def insert_row(table, values):
+    get_client().table(table).insert(values).execute()
+
+
+def update_row(table, row_id, values):
+    get_client().table(table).update(values).eq("id", row_id).execute()
+
+
+def delete_row(table, row_id):
+    get_client().table(table).delete().eq("id", row_id).execute()

@@ -69,3 +69,4 @@ if st.button("Save changes"):
     for _, row in changed.iterrows():
         update_invite(row["guest_id"], event_id, row["RSVP"], int(row["People"]))
     st.rerun()
+    
