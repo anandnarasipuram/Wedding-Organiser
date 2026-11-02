@@ -1,23 +1,9 @@
 import streamlit as st
+from auth import require_login
 from db import add_event, list_events
 
 st.set_page_config(page_title="Wedding Planner", layout="centered")
-
-
-def check_password():
-    if st.session_state.get("authed"):
-        return True
-    password = st.text_input("Family password", type="password")
-    if password and password == st.secrets["app_password"]:
-        st.session_state["authed"] = True
-        st.rerun()
-    elif password:
-        st.error("Wrong password")
-    return False
-
-
-if not check_password():
-    st.stop()
+require_login()
 
 st.title("Wedding Planner")
 st.header("Events")
