@@ -34,3 +34,5 @@ FOOD_BUFFER = 0.10
 MEAL_NAMES = ["Breakfast", "Lunch", "Snacks", "Dinner", "Other"]
 
 DISH_TYPES = ["Starter", "Main", "Rice and bread", "Sweet", "Drink", "Other"]
+
+DEFAULT_COUNTRY_CODE = "91"

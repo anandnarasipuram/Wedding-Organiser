@@ -11,6 +11,10 @@ pages = [
     st.Page("pages/4_Todo.py", title="To-do"),
     st.Page("pages/5_Budget.py", title="Budget"),
     st.Page("pages/6_Food.py", title="Food"),
+    st.Page("pages/7_Accommodation.py", title="Accommodation"),
+    st.Page("pages/8_Transport.py", title="Transport"),
+    st.Page("pages/9_Import.py", title="Import guests"),
+    st.Page("pages/10_WhatsApp.py", title="WhatsApp"),
 ]
 
 st.navigation(pages).run()
